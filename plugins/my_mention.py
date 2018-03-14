@@ -25,6 +25,11 @@ from libs import my_functions           # 外部関数の読み込み
 def mention_func(message):
     message.reply('https://github.com/cotree/connect')
 
+@respond_to('？')
+def mention_func(message):
+    message.reply('ローカルでしか生きられないの')
+
+
 @respond_to('issue')
 def mention_func(message):
     message.reply('https://github.com/cotree/connect/issue')
