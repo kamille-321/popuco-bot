@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
-
+import os
 # botアカウントのトークンを指定
 #API_TOKEN = SLACKBOT_API_TOKEN
-API_TOKEN = 'POPUCO_SLACK_API_KEY'
+API_TOKEN = os.environ.get("POPUCO_SLACK_API_KEY")
 # このbot宛のメッセージで、どの応答にも当てはまらない場合の応答文字列
 DEFAULT_REPLY = "意味わかんねーよ死ね バーーーーーーーーーーーカ!!!"
 
