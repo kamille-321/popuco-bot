@@ -3,6 +3,7 @@ from slackbot.bot import respond_to     # @botname: で反応するデコーダ
 from slackbot.bot import listen_to      # チャネル内発言で反応するデコーダ
 from slackbot.bot import default_reply  # 該当する応答がない場合に反応するデコーダ
 import re                               # 正規表現
+import os
 
 from libs import my_functions           # 外部関数の読み込み
 
@@ -21,17 +22,22 @@ from libs import my_functions           # 外部関数の読み込み
 # message.send('string')       string を送信
 # message.react('icon_emoji')  発言者のメッセージにリアクション(スタンプ)する
 #                              文字列中に':'はいらない
+
+github_url  = os.environ["GITHUB_URL"]
+issue_url   = os.environ["ISSUE_URL"]
+pr_url      = os.environ["PR_URL"]
+
 @respond_to('github')
 def mention_func(message):
-    message.reply('https://github.com/cotree/connect')
+    message.reply(github_url)
 
 @respond_to('issue')
 def mention_func(message):
-    message.reply('https://github.com/cotree/connect/issue')
+    message.reply(issue_url)
 
 @respond_to('pr')
 def mention_func(message):
-    message.reply('https://github.com/cotree/connect/pulls')
+    message.reply(pr_url)
 
 #@respond_to('github sprint')
 #def mention_func(message):
