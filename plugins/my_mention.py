@@ -39,10 +39,6 @@ def mention_func(message):
 def mention_func(message):
     message.reply(pr_url)
 
-#@respond_to('github sprint')
-#def mention_func(message):
-#    message.reply('https://github.com/cotree/connect')
-
 @respond_to('さては')
 def mention_func(message):
     message.reply('アンチだなオメー')
