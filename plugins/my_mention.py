@@ -70,12 +70,15 @@ def mention_func(message):
 
     if count == 0:
         message.reply('怒ってないよ')
+        message.reply(count)
         count += 1
     elif count < 3:
         message.reply('怒ってないよ')
+        message.reply(count)
         count += 1
     elif count == 3:
         message.reply('怒っ.....')
+        message.reply(count)
         count = 0
 
 
