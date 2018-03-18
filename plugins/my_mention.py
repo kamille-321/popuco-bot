@@ -69,7 +69,6 @@ def mention_func(message):
     global count
 
     if count == 0:
-        count = 0
         message.reply('怒ってないよ')
         count += 1
     elif count < 3:
