@@ -63,9 +63,23 @@ def mention_func(message):
 def mention_func(message):
     message.reply('いっぱいちゅき♡')
 
-@respond_to('えいえい、怒った？')
+@respond_to('えいえい、怒った')
 def mention_func(message):
-    message.reply('怒ってないよ')
+    if count is None:
+        count = 0
+        message.reply('怒ってないよ')
+        count += 1
+    elif count < 3:
+        message.reply('怒ってないよ')
+        count += 1
+    elif count == 3:
+        message.reply('怒っ.....')
+        count = 0
+
+@respond_to('死ね')
+def mention_func(message):
+    message.reply('ハイクソー')
+
 
 @respond_to('生きてる？')
 def mention_func(message):
