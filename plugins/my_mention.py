@@ -72,7 +72,7 @@ def mention_func(message):
     if angry_count == 1:
         message.reply('怒ってないよ')
         angry_count += 1
-    elif count < 3:
+    elif angry_count < 3:
         message.reply('怒ってないよ')
         angry_count += 1
     elif angry_count == 3:
