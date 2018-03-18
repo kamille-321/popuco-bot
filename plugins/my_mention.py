@@ -58,7 +58,7 @@ def mention_func(message):
 @respond_to('だれ？')
 def mention_func(message):
     message.reply('私だよ!!!!!!')
-    message.reply('popte10')
+    message.reply(':popte10:')
 
 @respond_to('どのくらい好きか教えて')
 def mention_func(message):
