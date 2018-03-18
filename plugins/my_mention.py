@@ -65,7 +65,7 @@ def mention_func(message):
 
 @respond_to('えいえい、怒った')
 def mention_func(message):
-    if count is None:
+    if not count in locals():
         count = 0
         message.reply('怒ってないよ')
         count += 1
