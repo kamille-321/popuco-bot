@@ -2,7 +2,6 @@
 from slackbot.bot import respond_to     # @botname: で反応するデコーダ
 from slackbot.bot import listen_to      # チャネル内発言で反応するデコーダ
 from slackbot.bot import default_reply  # 該当する応答がない場合に反応するデコーダ
-import re                               # 正規表現
 import os
 
 from libs import my_functions           # 外部関数の読み込み
@@ -55,7 +54,7 @@ def mention_func(message):
 def mention_func(message):
     message.reply('エサヒィ～スープゥードゥラァ～イ！')
 
-@respond_to('だれ？')
+@respond_to('だれ')
 def mention_func(message):
     message.reply('私だよ!!!!!!')
     message.reply(':popte10:')
@@ -63,6 +62,7 @@ def mention_func(message):
 @respond_to('どのくらい好きか教えて')
 def mention_func(message):
     message.reply('いっぱいちゅき♡')
+    message.reply(':popte15:')
 
 angry_count = 1
 @respond_to('えいえい、怒った')
@@ -77,6 +77,7 @@ def mention_func(message):
         angry_count += 1
     elif angry_count == 3:
         message.reply('怒っ.....')
+        message.reply(':popte14:')
         angry_count = 1
 
 
