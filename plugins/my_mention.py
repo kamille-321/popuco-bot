@@ -67,7 +67,7 @@ def mention_func(message):
 angry_count = 1
 @respond_to('えいえい、怒った')
 def mention_func(message):
-    global count
+    global angry_count
 
     if angry_count == 1:
         message.reply('怒ってないよ')
