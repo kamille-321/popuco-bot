@@ -81,7 +81,7 @@ def mention_func(message):
         angry_count = 1
 
 
-@respond_to('死ね')
+@respond_to('しね')
 def mention_func(message):
     message.reply('ハイクソー')
 
