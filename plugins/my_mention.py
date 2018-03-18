@@ -55,29 +55,29 @@ def mention_func(message):
 def mention_func(message):
     message.reply('エサヒィ～スープゥードゥラァ～イ！')
 
-@respond_to('そそぐ？だれ？')
+@respond_to('だれ？')
 def mention_func(message):
     message.reply('私だよ!!!!!!')
+    message.react('popte10')
 
-@respond_to('私のことどのくらい好きか教えて')
+@respond_to('どのくらい好きか教えて')
 def mention_func(message):
     message.reply('いっぱいちゅき♡')
 
-count = 0
+angry_count = 1
 @respond_to('えいえい、怒った')
 def mention_func(message):
     global count
 
-    if count == 0:
-        message.reply('怒ってないよ %d' % count)
-        count += 1
+    if angry_count == 1:
+        message.reply('怒ってないよ')
+        angry_count += 1
     elif count < 3:
-        message.reply('怒ってないよ %d' % count)
-        count += 1
-    elif count == 3:
-        #message.reply('怒っ.....')
-        message.reply('怒っ %d' % count)
-        count = 0
+        message.reply('怒ってないよ')
+        angry_count += 1
+    elif angry_count == 3:
+        message.reply('怒っ.....')
+        angry_count = 1
 
 
 @respond_to('死ね')
