@@ -65,6 +65,7 @@ def mention_func(message):
 
 @respond_to('えいえい、怒った')
 def mention_func(message):
+'''
     if not count in locals():
         count = 0
         message.reply('怒ってないよ')
@@ -75,6 +76,20 @@ def mention_func(message):
     elif count == 3:
         message.reply('怒っ.....')
         count = 0
+'''
+    try:
+        elif count < 3:
+            message.reply('怒ってないよ')
+            count += 1
+        elif count == 3:
+            message.reply('怒っ.....')
+            count = 0
+
+    except NameError:
+        count = 0
+        message.reply('怒ってないよ')
+        count += 1
+
 
 @respond_to('死ね')
 def mention_func(message):
