@@ -85,7 +85,7 @@ def mention_func(message):
 @respond_to('しね')
 def mention_func(message):
     message.reply('ハイクソー')
-    sleep(3)
+    sleep(5)
     message.reply('クソクソクソクソクソクソクソクソクソクソクソクソクソクソクソクソクソクソ')
 
 
