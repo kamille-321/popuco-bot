@@ -2,6 +2,7 @@
 from slackbot.bot import respond_to     # @botname: で反応するデコーダ
 from slackbot.bot import listen_to      # チャネル内発言で反応するデコーダ
 from slackbot.bot import default_reply  # 該当する応答がない場合に反応するデコーダ
+from time         import sleep
 import os
 
 from libs import my_functions           # 外部関数の読み込み
@@ -84,6 +85,8 @@ def mention_func(message):
 @respond_to('しね')
 def mention_func(message):
     message.reply('ハイクソー')
+    sleep(3)
+    message.reply('クソクソクソクソクソクソクソクソクソクソクソクソクソクソクソクソクソクソ')
 
 
 @respond_to('生きてる？')
