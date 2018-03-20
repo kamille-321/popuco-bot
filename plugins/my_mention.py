@@ -99,7 +99,7 @@ def default(message):
     import json
     import types
 
-    KEY = '676d7a377a314238542f336d58716472712e2e53456762714e5947485359554345674a6e2f5a4b33595141'
+    KEY = os.environ.get("DOCOMO_API_KEY")
 
     #エンドポイントの設定
     endpoint = 'https://api.apigw.smt.docomo.ne.jp/dialogue/v1/dialogue?APIKEY=REGISTER_KEY'
