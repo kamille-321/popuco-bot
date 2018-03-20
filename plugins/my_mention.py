@@ -93,6 +93,33 @@ def mention_func(message):
 def mention_func(message):
     message.reply('もしもしポリスメン？')
 
+@default_reply()
+def default(message):
+    import requests
+    import json
+    import types
+
+    KEY = '676d7a377a314238542f336d58716472712e2e53456762714e5947485359554345674a6e2f5a4b33595141'
+
+    #エンドポイントの設定
+    endpoint = 'https://api.apigw.smt.docomo.ne.jp/dialogue/v1/dialogue?APIKEY=REGISTER_KEY'
+    url = endpoint.replace('REGISTER_KEY', KEY)
+    text = message.body['text']
+
+    payload = {'utt' : text, 'context': ''}
+    headers = {'Content-type': 'application/json'}
+
+    #送信
+    r = requests.post(url, data=json.dumps(payload), headers=headers)
+    data = r.json()
+
+    #jsonの解析
+    response = data['utt']
+    context = data['context']
+
+    #表示
+    message.reply('%s' % response)
+
 
 @listen_to('おすおす')
 def listen_func(message):
