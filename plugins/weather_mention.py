@@ -43,5 +43,5 @@ def weather(message):
         telop_icon = ':cloud:'
     else:
         telop_icon = ':fire:'
-    text = title + '\n' + telop + telop_icon + '　' + '↑' + highest_temp + ' / ' + lowest_temp
+    text = title + '\n' + telop + telop_icon + '　' + '↑' + highest_temp + ' / ' + lowest_temp + '↓'
     message.send(text)
