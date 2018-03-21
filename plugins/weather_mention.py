@@ -22,8 +22,11 @@ def weather(message):
         lowest_temp = jsonfile['forecasts'][0]['temperature']['min']['celsius']
     else:
         lowest_temp = ''
-    highest_temp = jsonfile['forecasts'][0]['temperature']['max']['celsius']
 
+    if jsonfile['forecasts'][0]['temperature']['max'] is not None:
+        highest_temp = jsonfile['forecasts'][0]['temperature']['max']['celsius']
+    else:
+        highest_temp = ''
     telop_icon = ''
 
     if telop.find('雪') > -1:
@@ -45,6 +48,8 @@ def weather(message):
         telop_icon = ':fire:'
     if lowest_temp == '':
         text = title + '\n' + telop + telop_icon + '　' + '↑' + highest_temp + '℃'
+    if highest_temp == '':
+        text = title + '\n' + telop + telop_icon
     else:
         text = title + '\n' + telop + telop_icon + '　' + '↑' + highest_temp + '℃ / ' + lowest_temp + '℃↓'
     message.send(text)
